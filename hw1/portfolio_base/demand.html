@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming Languages – Demand</title>
+  <link href="css/styles1.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <h1>Programming <span>Languages</span></h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Languages</a>
+    <a href="language_history.html">History</a>
+    <a href="sandbox.html">Sandbox</a>
+    <a href="demand.html" class="active">Demand</a>
+  </nav>
+
+  <main>
+
+    <p class="section-title">The Job Board</p>
+    <p class="section-sub">Language demand for 2025 — salaries, industries, and where to start.</p>
+
+    <!-- TIOBE Rankings -->
+    <div class="card" style="margin-bottom:36px;">
+      <p class="section-title" style="font-size:1.1rem; margin-bottom:20px;">TIOBE Popularity Index (2025)</p>
+
+      <div class="bar-wrap">
+        <div class="bar-label"><span>Python</span><span>28.1%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%;"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-label"><span>Java</span><span>15.4%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:60%;"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-label"><span>JavaScript</span><span>8.9%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:35%;"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-label"><span>C++</span><span>9.8%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:38%;"></div></div>
+      </div>
+
+      <p style="margin-top:14px; font-size:0.8rem;">Source: TIOBE Index approximation. Rankings shift monthly.</p>
+    </div>
+
+    <!-- Salary Cards -->
+    <p class="section-title">Estimated U.S. Salaries (2025)</p>
+    <p class="section-sub">Median annual salaries for developers who primarily use each language</p>
+
+    <div class="grid-4" style="margin-bottom:40px;">
+      <div class="card" style="text-align:center;">
+        <img src="img/Python_logo.png" alt="Python" width="50" style="margin-bottom:12px;">
+        <div class="stat-num">$120K</div>
+        <p style="margin-top:4px; font-size:0.9rem;">Python Developer</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <img src="img/C++_logo.png" alt="C++" width="50" style="margin-bottom:12px;">
+        <div class="stat-num">$125K</div>
+        <p style="margin-top:4px; font-size:0.9rem;">C++ Engineer</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <img src="img/Javascript_logo.png" alt="JavaScript" width="50" style="margin-bottom:12px;">
+        <div class="stat-num">$110K</div>
+        <p style="margin-top:4px; font-size:0.9rem;">JS Developer</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <img src="img/java_logo.png" alt="Java" width="50" style="margin-bottom:12px;">
+        <div class="stat-num">$115K</div>
+        <p style="margin-top:4px; font-size:0.9rem;">Java Developer</p>
+      </div>
+    </div>
+
+    <!-- Industry Adoption -->
+    <p class="section-title">Industry Adoption</p>
+    <p class="section-sub">Which sectors rely on each language most</p>
+
+    <div class="card" style="overflow-x:auto; margin-bottom:40px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Industry</th>
+            <th>Python</th>
+            <th>C++</th>
+            <th>JavaScript</th>
+            <th>Java</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Finance / FinTech</td>
+            <td>&#9733;&#9733;&#9733;</td>
+            <td>&#9733;&#9733;</td>
+            <td>&#9733;</td>
+            <td>&#9733;&#9733;&#9733;</td>
+          </tr>
+          <tr>
+            <td>Gaming</td>
+            <td>&#9733;</td>
+            <td>&#9733;&#9733;&#9733;</td>
+            <td>&#9733;</td>
+            <td>&#9733;</td>
+          </tr>
+          <tr>
+            <td>Web Development</td>
+            <td>&#9733;&#9733;</td>
+            <td>&#9733;</td>
+            <td>&#9733;&#9733;&#9733;</td>
+            <td>&#9733;&#9733;</td>
+          </tr>
+          <tr>
+            <td>AI / Data Science</td>
+            <td>&#9733;&#9733;&#9733;</td>
+            <td>&#9733;</td>
+            <td>&#9733;</td>
+            <td>&#9733;</td>
+          </tr>
+          <tr>
+            <td>Mobile / Android</td>
+            <td>&#9733;</td>
+            <td>&#9733;</td>
+            <td>&#9733;&#9733;</td>
+            <td>&#9733;&#9733;&#9733;</td>
+          </tr>
+          <tr>
+            <td>Embedded / Systems</td>
+            <td>&#9733;</td>
+            <td>&#9733;&#9733;&#9733;</td>
+            <td>&#9733;</td>
+            <td>&#9733;</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:10px; font-size:0.8rem;">&#9733;&#9733;&#9733; = Heavy adoption &nbsp; &#9733;&#9733; = Moderate &nbsp; &#9733; = Light</p>
+    </div>
+
+    <!-- Beginner vs Advanced -->
+    <p class="section-title">Where to Start?</p>
+    <p class="section-sub">Recommended languages depending on your experience level</p>
+
+    <div class="grid-2">
+      <div class="card" style="border-left: 3px solid var(--orange);">
+        <p class="section-title" style="font-size:1.1rem; margin-bottom:12px;">Beginner</p>
+        <p style="line-height:1.8;"><strong style="color:var(--white);">Python</strong> — Readable syntax, minimal boilerplate, huge beginner community.<br>
+        <strong style="color:var(--white);">JavaScript</strong> — Instant feedback in the browser, visual results motivate learning.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid #9898a8;">
+        <p class="section-title" style="font-size:1.1rem; margin-bottom:12px;">Intermediate / Advanced</p>
+        <p style="line-height:1.8;"><strong style="color:var(--white);">Java</strong> — Strict OOP enforces good habits; great for design patterns and enterprise.<br>
+        <strong style="color:var(--white);">C++</strong> — Teaches memory management and low-level thinking. Challenging but rewarding.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <hr>
+    <figure>
+      <img src="img/csumb_logo.png" alt="CSUMB Logo" width="50">
+    </figure>
+    CST336 Internet Programming. 2025&copy; Castro <br>
+    <strong>Disclaimer:</strong> The information in this webpage is for academic purposes only.
+  </footer>
+
+</body>
+</html>
+

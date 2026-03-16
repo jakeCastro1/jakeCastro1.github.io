@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming Languages – Sandbox</title>
+  <link href="css/styles1.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <h1>Programming <span>Languages</span></h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Languages</a>
+    <a href="language_history.html">History</a>
+    <a href="sandbox.html" class="active">Sandbox</a>
+    <a href="demand.html">Demand</a>
+  </nav>
+
+  <main>
+
+    <p class="section-title">Hello, World! Sandbox</p>
+    <p class="section-sub">Browse beginner-friendly code snippets across all four languages. Click a language to switch, then copy the code.</p>
+
+    <!-- Language Tabs -->
+    <div class="lang-tabs">
+      <button class="tab-btn active" onclick="showLang('python', this)">Python</button>
+      <button class="tab-btn" onclick="showLang('cpp', this)">C++</button>
+      <button class="tab-btn" onclick="showLang('js', this)">JavaScript</button>
+      <button class="tab-btn" onclick="showLang('java', this)">Java</button>
+    </div>
+
+    <!-- Challenge selector -->
+    <div style="margin-bottom:24px; display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="tab-btn active" id="ch-print" onclick="showChallenge('print', this)">Print Text</button>
+      <button class="tab-btn" id="ch-loop"  onclick="showChallenge('loop', this)">Basic Loop</button>
+      <button class="tab-btn" id="ch-str"   onclick="showChallenge('str', this)">String Manipulation</button>
+    </div>
+
+    <!-- ===== PYTHON ===== -->
+    <div class="snippet-block active" id="lang-python">
+
+      <div id="py-print" class="snippet-pane">
+        <span class="lang-badge badge-py">Python — Print Text</span>
+        <pre><code><span class="cmt"># Print a simple greeting</span>
+<span class="fn">print</span>(<span class="str">"Hello, World!"</span>)
+<span class="fn">print</span>(<span class="str">"Welcome to the Language Arena."</span>)</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+      <div id="py-loop" class="snippet-pane" style="display:none;">
+        <span class="lang-badge badge-py">Python — Basic Loop</span>
+        <pre><code><span class="cmt"># Loop from 1 to 5 and print each number</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">6</span>):
+    <span class="fn">print</span>(<span class="str">f"Number: </span><span class="kw">{i}</span><span class="str">"</span>)</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+      <div id="py-str" class="snippet-pane" style="display:none;">
+        <span class="lang-badge badge-py">Python — String Manipulation</span>
+        <pre><code><span class="cmt"># String manipulation examples</span>
+message = <span class="str">"hello, world"</span>
+<span class="fn">print</span>(message.<span class="fn">upper</span>())        <span class="cmt"># HELLO, WORLD</span>
+<span class="fn">print</span>(message.<span class="fn">title</span>())        <span class="cmt"># Hello, World</span>
+<span class="fn">print</span>(message.<span class="fn">replace</span>(<span class="str">"world"</span>, <span class="str">"Python"</span>))  <span class="cmt"># hello, Python</span>
+<span class="fn">print</span>(<span class="fn">len</span>(message))           <span class="cmt"># 12</span></code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+    </div>
+
+    <!-- ===== C++ ===== -->
+    <div class="snippet-block" id="lang-cpp">
+
+      <div id="cpp-print" class="snippet-pane">
+        <span class="lang-badge badge-cpp">C++ — Print Text</span>
+        <pre><code><span class="cmt">// Print a simple greeting</span>
+<span class="kw">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kw">using namespace</span> std;
+
+<span class="fn">int</span> main() {
+    cout &lt;&lt; <span class="str">"Hello, World!"</span> &lt;&lt; endl;
+    cout &lt;&lt; <span class="str">"Welcome to the Language Arena."</span> &lt;&lt; endl;
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+      <div id="cpp-loop" class="snippet-pane" style="display:none;">
+        <span class="lang-badge badge-cpp">C++ — Basic Loop</span>
+        <pre><code><span class="cmt">// Loop from 1 to 5 and print each number</span>
+<span class="kw">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kw">using namespace</span> std;
+
+<span class="fn">int</span> main() {
+    <span class="kw">for</span> (<span class="fn">int</span> i = <span class="num">1</span>; i &lt;= <span class="num">5</span>; i++) {
+        cout &lt;&lt; <span class="str">"Number: "</span> &lt;&lt; i &lt;&lt; endl;
+    }
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+      <div id="cpp-str" class="snippet-pane" style="display:none;">
+        <span class="lang-badge badge-cpp">C++ — String Manipulation</span>
+        <pre><code><span class="cmt">// String manipulation examples</span>
+<span class="kw">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kw">#include</span> <span class="str">&lt;string&gt;</span>
+<span class="kw">#include</span> <span class="str">&lt;algorithm&gt;</span>
+<span class="kw">using namespace</span> std;
+
+<span class="fn">int</span> main() {
+    string msg = <span class="str">"hello, world"</span>;
+    cout &lt;&lt; <span class="str">"Length: "</span> &lt;&lt; msg.<span class="fn">length</span>() &lt;&lt; endl;
+
+    <span class="fn">transform</span>(msg.<span class="fn">begin</span>(), msg.<span class="fn">end</span>(), msg.<span class="fn">begin</span>(), ::toupper);
+    cout &lt;&lt; msg &lt;&lt; endl; <span class="cmt">// HELLO, WORLD</span>
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <div class="snippet-block" id="lang-js">
+
+      <div id="js-print" class="snippet-pane">
+        <span class="lang-badge badge-js">JavaScript — Print Text</span>
+        <pre><code><span class="cmt">// Print to the browser console</span>
+console.<span class="fn">log</span>(<span class="str">"Hello, World!"</span>);
+console.<span class="fn">log</span>(<span class="str">"Welcome to the Language Arena."</span>);</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+      <div id="js-loop" class="snippet-pane" style="display:none;">
+        <span class="lang-badge badge-js">JavaScript — Basic Loop</span>
+        <pre><code><span class="cmt">// Loop from 1 to 5 and log each number</span>
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">1</span>; i &lt;= <span class="num">5</span>; i++) {
+    console.<span class="fn">log</span>(<span class="str">`Number: </span><span class="kw">${i}</span><span class="str">`</span>);
+}</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+      <div id="js-str" class="snippet-pane" style="display:none;">
+        <span class="lang-badge badge-js">JavaScript — String Manipulation</span>
+        <pre><code><span class="cmt">// String manipulation examples</span>
+<span class="kw">let</span> message = <span class="str">"hello, world"</span>;
+console.<span class="fn">log</span>(message.<span class="fn">toUpperCase</span>());         <span class="cmt">// HELLO, WORLD</span>
+console.<span class="fn">log</span>(message.<span class="fn">replace</span>(<span class="str">"world"</span>, <span class="str">"JS"</span>)); <span class="cmt">// hello, JS</span>
+console.<span class="fn">log</span>(message.<span class="fn">split</span>(<span class="str">", "</span>));            <span class="cmt">// ["hello", "world"]</span>
+console.<span class="fn">log</span>(message.<span class="fn">length</span>);                <span class="cmt">// 12</span></code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+    </div>
+
+    <!-- ===== JAVA ===== -->
+    <div class="snippet-block" id="lang-java">
+
+      <div id="java-print" class="snippet-pane">
+        <span class="lang-badge badge-java">Java — Print Text</span>
+        <pre><code><span class="cmt">// Print a simple greeting</span>
+<span class="kw">public class</span> <span class="cls">HelloWorld</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(String[] args) {
+        System.out.<span class="fn">println</span>(<span class="str">"Hello, World!"</span>);
+        System.out.<span class="fn">println</span>(<span class="str">"Welcome to the Language Arena."</span>);
+    }
+}</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+      <div id="java-loop" class="snippet-pane" style="display:none;">
+        <span class="lang-badge badge-java">Java — Basic Loop</span>
+        <pre><code><span class="cmt">// Loop from 1 to 5 and print each number</span>
+<span class="kw">public class</span> <span class="cls">BasicLoop</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(String[] args) {
+        <span class="kw">for</span> (<span class="fn">int</span> i = <span class="num">1</span>; i &lt;= <span class="num">5</span>; i++) {
+            System.out.<span class="fn">println</span>(<span class="str">"Number: "</span> + i);
+        }
+    }
+}</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+      <div id="java-str" class="snippet-pane" style="display:none;">
+        <span class="lang-badge badge-java">Java — String Manipulation</span>
+        <pre><code><span class="cmt">// String manipulation examples</span>
+<span class="kw">public class</span> <span class="cls">StringDemo</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(String[] args) {
+        String msg = <span class="str">"hello, world"</span>;
+        System.out.<span class="fn">println</span>(msg.<span class="fn">toUpperCase</span>());       <span class="cmt">// HELLO, WORLD</span>
+        System.out.<span class="fn">println</span>(msg.<span class="fn">replace</span>(<span class="str">"world"</span>, <span class="str">"Java"</span>)); <span class="cmt">// hello, Java</span>
+        System.out.<span class="fn">println</span>(msg.<span class="fn">length</span>());            <span class="cmt">// 12</span>
+    }
+}</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+
+    </div>
+
+    <!-- Tip box -->
+    <div class="card" style="margin-top:36px; border-left:3px solid var(--orange);">
+      <p style="color:var(--white); font-weight:700; margin-bottom:6px;">Tip</p>
+      <p style="line-height:1.7;">To run these snippets, try <a href="https://replit.com" target="_blank" style="color:var(--orange);">Replit</a> or <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank" style="color:var(--orange);">Programiz</a>. Paste the code and hit Run.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <hr>
+    <figure>
+      <img src="img/csumb_logo.png" alt="CSUMB Logo" width="50">
+    </figure>
+    CST336 Internet Programming. 2025&copy; Castro <br>
+    <strong>Disclaimer:</strong> The information in this webpage is for academic purposes only.
+  </footer>
+
+  <script>
+    var currentLang = 'python';
+    var currentChallenge = 'print';
+
+    function showLang(lang, btn) {
+      document.getElementById('lang-' + currentLang).classList.remove('active');
+      document.getElementById('lang-' + lang).classList.add('active');
+      currentLang = lang;
+
+      document.querySelectorAll('.lang-tabs .tab-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+    }
+
+    function showChallenge(challenge, btn) {
+      var langs = ['python', 'cpp', 'js', 'java'];
+      var map = { 'python': 'py', 'cpp': 'cpp', 'js': 'js', 'java': 'java' };
+      langs.forEach(function(l) {
+        var prefix = map[l];
+        document.getElementById(prefix + '-' + currentChallenge).style.display = 'none';
+        document.getElementById(prefix + '-' + challenge).style.display = 'block';
+      });
+      currentChallenge = challenge;
+
+      document.querySelectorAll('#ch-print, #ch-loop, #ch-str').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+    }
+
+    function copyCode(btn) {
+      var code = btn.previousElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(function() {
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Copy Code'; }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
