@@ -47,7 +47,6 @@ function gradeQuiz() {
     score = 0;
     let q1Response = document.querySelector("#q1").value.toLowerCase();
     let q2Response = document.querySelector("#q2").value;
-    let q4Response = document.querySelector("input[name=q4]:checked").value;
     console.log(q1Response);
 
     //grading question 1
@@ -59,7 +58,7 @@ function gradeQuiz() {
     }
 
     //grading question 2
-    if (q2Response == "mo") {
+    if (q2Response == "Missouri") {
         rightAnswer(2);
     }
     else {
@@ -75,14 +74,32 @@ function gradeQuiz() {
     }
 
     //grading question 4
+    let q4Checked = document.querySelector("input[name=q4]:checked");
+    let q4Response = q4Checked ? q4Checked.value : "";
     if(q4Response == "Rhode Island") {
         rightAnswer(4);
     } else {
-        wrongAnswer()
+        wrongAnswer(4);
     }
 
-    document.querySelector("#totalScore").innerHTML = `Total Score: ${score}%`;
-    document.querySelector("totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
+    // Display total score with color based on performance
+    let totalScoreEl = document.querySelector("#totalScore");
+    totalScoreEl.innerHTML = `Total Score: ${score}%`;
+    if (score >= 80) {
+        totalScoreEl.className = "text-success";
+    } else {
+        totalScoreEl.className = "text-danger";
+    }
+
+    // Display congratulatory message if score > 80
+    let congratsEl = document.querySelector("#congratsMsg");
+    if (score > 80) {
+        congratsEl.innerHTML = "🎉 Congratulations! Excellent work!";
+    } else {
+        congratsEl.innerHTML = "";
+    }
+
+    document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
     localStorage.setItem("total_attempts", attempts);
 
 }//gradeQuiz
