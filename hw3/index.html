@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyNow — Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="bg-layer" id="bgLayer"></div>
+
+<div class="page">
+
+    <header class="header">
+        <div class="logo">SKY<span>NOW</span></div>
+        <p class="tagline">Real-time weather, try it out!</p>
+    </header>
+
+    <!-- Form element + event listener + JS validation (rubric) -->
+    <form id="weatherForm" class="search-form" novalidate>
+        <div class="input-wrap">
+            <input
+                    type="text"
+                    id="cityInput"
+                    class="city-input"
+                    placeholder="Enter a city name..."
+                    autocomplete="off"
+            >
+            <button type="submit" class="search-btn">Search</button>
+        </div>
+        <span id="inputError" class="input-error"></span>
+    </form>
+
+    <!-- Loading indicator -->
+    <div id="loadingSpinner" class="spinner hidden">
+        <div class="spin-ring"></div>
+        <p>Fetching weather data...</p>
+    </div>
+
+    <!-- Error message -->
+    <div id="errorMsg" class="error-msg hidden"></div>
+
+    <!-- Results card — hidden until data loads -->
+    <div id="weatherCard" class="weather-card hidden">
+
+        <div class="card-top">
+            <div class="location-block">
+                <h2 id="cityName" class="city-name"></h2>
+                <p id="countryName" class="country-name"></p>
+            </div>
+            <div class="temp-block">
+                <div id="weatherIcon" class="weather-icon"></div>
+                <div id="tempDisplay" class="temp-display"></div>
+            </div>
+        </div>
+
+        <p id="weatherDesc" class="weather-desc"></p>
+
+        <!-- Temperature-based color banner (rubric: different display based on temp) -->
+        <div id="tempBanner" class="temp-banner"></div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <span class="stat-label">Feels Like</span>
+                <span id="feelsLike" class="stat-value"></span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Humidity</span>
+                <span id="humidity" class="stat-value"></span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Wind</span>
+                <span id="windSpeed" class="stat-value"></span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Visibility</span>
+                <span id="visibility" class="stat-value"></span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Pressure</span>
+                <span id="pressure" class="stat-value"></span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Condition ID</span>
+                <span id="conditionCode" class="stat-value"></span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+    --bg: #0a0f1e;
+    --card: rgba(255, 255, 255, 0.06);
+    --card-border: rgba(255, 255, 255, 0.12);
+    --accent: #38bdf8;
+    --accent2: #f59e0b;
+    --text: #f0f4ff;
+    --muted: rgba(240, 244, 255, 0.5);
+    --danger: #f87171;
+    --radius: 20px;
+}
+
+/* Rule 1: Reset and base body styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Rule 2: Body layout and font */
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Rule 3: Animated background gradient layer */
+.bg-layer {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 30%, #0c2a4a 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, #0f1f3d 0%, transparent 60%),
+    var(--bg);
+    transition: background 1.2s ease;
+    z-index: 0;
+}
+
+/* Rule 4: Page container */
+.page {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 640px;
+    padding: 60px 24px 80px;
+}
+
+/* Rule 5: Header and logo */
+.header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 4px;
+    color: var(--text);
+    line-height: 1;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+/* Rule 6: Tagline text */
+.tagline {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Rule 7: Search form layout */
+.search-form {
+    margin-bottom: 36px;
+}
+
+.input-wrap {
+    display: flex;
+    gap: 10px;
+}
+
+/* Rule 8: City text input styling */
+.city-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1.5px solid var(--card-border);
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.city-input::placeholder {
+    color: var(--muted);
+}
+
+.city-input:focus {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Rule 9: Search button */
+.search-btn {
+    background: var(--accent);
+    color: #0a0f1e;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+}
+
+.search-btn:hover {
+    background: #7dd3fc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(56, 189, 248, 0.45);
+}
+
+.search-btn:active {
+    transform: translateY(0);
+}
+
+/* Rule 10: Validation error message */
+.input-error {
+    display: block;
+    color: var(--danger);
+    font-size: 0.82rem;
+    margin-top: 8px;
+    min-height: 18px;
+    font-weight: 500;
+}
+
+/* Rule 11: Weather result card */
+.weather-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 36px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Rule 12: Top section of card */
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+/* Rule 13: City and country name text */
+.city-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: var(--text);
+}
+
+.country-name {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 4px;
+    font-weight: 300;
+}
+
+/* Rule 14: Temperature display */
+.temp-block {
+    text-align: right;
+}
+
+.weather-icon {
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+.temp-display {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.2rem;
+    color: var(--accent);
+    letter-spacing: 1px;
+    line-height: 1.1;
+}
+
+/* Rule 15: Weather description */
+.weather-desc {
+    text-transform: capitalize;
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 0.3px;
+}
+
+/* Rule 16: Temperature-based image banner */
+.temp-banner {
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+    transition: background 0.5s, color 0.5s;
+}
+
+.temp-banner.freezing {
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    color: #bfdbfe;
+}
+
+.temp-banner.cold {
+    background: linear-gradient(135deg, #164e63, #0891b2);
+    color: #a5f3fc;
+}
+
+.temp-banner.mild {
+    background: linear-gradient(135deg, #14532d, #16a34a);
+    color: #bbf7d0;
+}
+
+.temp-banner.warm {
+    background: linear-gradient(135deg, #78350f, #d97706);
+    color: #fde68a;
+}
+
+.temp-banner.hot {
+    background: linear-gradient(135deg, #7f1d1d, #dc2626);
+    color: #fecaca;
+}
+
+/* Rule 17: Stats grid layout */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Rule 18: Individual stat box */
+.stat-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: background 0.2s;
+}
+
+.stat-box:hover {
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.stat-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* Rule 19: Loading spinner */
+.spinner {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.spin-ring {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(56, 189, 248, 0.2);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 14px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Rule 20: Error message display */
+.error-msg {
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    color: var(--danger);
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Utility: hidden class */
+.hidden {
+    display: none !important;
+}
+
+/* Rule 21: Responsive adjustments */
+@media (max-width: 480px) {
+    .logo { font-size: 3rem; }
+    .weather-card { padding: 24px 20px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .city-name { font-size: 2.2rem; }
+    .temp-display { font-size: 2.4rem; }
+    .input-wrap { flex-direction: column; }
+}
